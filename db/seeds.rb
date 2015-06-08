@@ -13,3 +13,7 @@ pt1 = Pt.create(name:"Tom Brown", profile: "blah, blah", specialism:"blah, blah,
 pt2 = Pt.create(name:"Sarah Smith", profile: "blah3, blah3", specialism:"blah5, blah5, blah5", email: "sarah@ptemail.com", phone: "0987")
 
 review1 = Review.create(title: "Blah, Blah4", content: "blahj, blahj", author: "Suzy Brown")
+review2 = Review.create(title:"Blah3, Blah3, Blah3,", content: "bladhw5, bladhw5", author: "Tony Dunne")
+
+pt1 < < review1
+pt1 < < review2

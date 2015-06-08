@@ -1,10 +1,20 @@
 <%= form_for [@pt, @review] do |form| %>
   
-  <%= form.label :description %>
-  <%= form.text_field :description %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
 
-  <%= form.label :rating %>
-  <%= form.select :rating, options_for_select(1..5) %>
+  <%= form.label :content %>
+  <%= form.text_field :content %>
+
+
+  <%= form.label :author%>
+  <%= form.text_field :author %>
+
+
+
+
+
+ 
 
   <%= form.submit 'Submit' %>
 

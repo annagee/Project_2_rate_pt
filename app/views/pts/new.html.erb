@@ -1,18 +1,18 @@
-<%= form_for @pt do |form| %>
+<%=   form_for @pts do |f| %>
   
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <%= form.label :profile %>
-  <%= form.select :profile %>
+  <%= f.label :profile %>
+  <%= f.text_field :profile %>
 
-  <%= form.label :email %>
-  <%= form.select :email%>
+  <%= f.label :email %>
+  <%= f.text_field :email%>
 
 
-  <%= form.label :phone %>
-  <%= form.select :phone %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
 
-  <%= form.submit 'Submit' %>
+  <%= f.submit 'Submit' %>
 
 <% end %>

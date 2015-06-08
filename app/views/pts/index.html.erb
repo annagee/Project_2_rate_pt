@@ -3,5 +3,7 @@
 
 need to add search function 
 <% @pts.each do |pt| %>
-  <%= pt.name %>
+  <%= link_to pt.name, pt_path(pt) %>
   <% end %>
+
+  

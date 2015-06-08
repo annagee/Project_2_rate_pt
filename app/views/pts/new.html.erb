@@ -1,0 +1,18 @@
+<%= form_for @pt do |form| %>
+  
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :profile %>
+  <%= form.select :profile %>
+
+  <%= form.label :email %>
+  <%= form.select :email%>
+
+
+  <%= form.label :phone %>
+  <%= form.select :phone %>
+
+  <%= form.submit 'Submit' %>
+
+<% end %>

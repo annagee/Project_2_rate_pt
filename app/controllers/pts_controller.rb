@@ -7,6 +7,12 @@ class PtsController < ApplicationController
   end  
 
   def show
-   @pts = Pt.find(params:[id])
+   @pts = Pt.find(params[:id])
   end  
+  
+   def new
+    @pts = Pt.new
+
+   end 
+
 end  

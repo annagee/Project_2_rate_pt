@@ -5,9 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u1  = User.create(name: "Suzy Brown", email: "suzy@email.com", phone: 09123456311)
-u2 = User.create(name: "Joe Bloggs", email: "joe@noemail.com", phone: 06694820010)
+u1  = User.create(name: "Suzy Brown", email: "suzy@email.com", phone: "0912")
+u2 = User.create(name: "Joe Bloggs", email: "joe@noemail.com", phone: "0669")
 
 
-pt1 = Pt.user(name:"Tom Brown", profile: "blah, blah", specialism:"blah, blah, blah"email: "tom@ptemail.com", phone: 08968290098)
-pt2 = Pt.user(name:"Sarah Smith", profile: "blah3, blah3", specialism:"blah5, blah5, blah5", email: "sarah@ptemail.com" phone: 0987615788939)
+pt1 = Pt.create(name:"Tom Brown", profile: "blah, blah", specialism:"blah, blah, blah",email: "tom@ptemail.com", phone: "0896")
+pt2 = Pt.create(name:"Sarah Smith", profile: "blah3, blah3", specialism:"blah5, blah5, blah5", email: "sarah@ptemail.com", phone: "0987")
+
+review1 = Review.create(title: "Blah, Blah4", content: "blahj, blahj", author: "Suzy Brown")

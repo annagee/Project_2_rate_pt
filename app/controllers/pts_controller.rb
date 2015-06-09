@@ -4,8 +4,8 @@ class PtsController < ApplicationController
 
   def index
     @pts = Pt.all
-     @search = Pt.search(params[:q])
-    @skills = @search.result(distinct: true)
+    @search = Pt.search(params[:q])
+    @pts = @search.result(distinct: true)
 
 
   end  

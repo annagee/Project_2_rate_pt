@@ -17,7 +17,7 @@
 </div>
 
 
-<p><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
+<p class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
 
 <p><% @pt.reviews.each do | review| %>
 <p class="review-title"><%= review.title %></p>

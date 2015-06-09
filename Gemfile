@@ -38,6 +38,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry'
   gem 'ransack'
+  gem  'ratyrate'
 
 
 

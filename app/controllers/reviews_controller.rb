@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
    def create
     @pt = Pt.find(params[:pt_id])
-    pt.reviews << Review.create(params[:review].permit(:description, :rating))
+    pt.reviews << Review.create(params[:review].permit(:title, :content, :author))
     
     redirect_to pt
   end

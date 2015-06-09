@@ -12,20 +12,26 @@ class PtsController < ApplicationController
 
 
   def show
-   @pts = Pt.find(params[:id])
+   @pt = Pt.find(params[:id])
   end  
 
 
 
   def create
-    pt = Pt.new params[:pt].permit(:name, :profile, :email, :phone)
+    pt = Pt.new params[:pt].permit(:name, :profile, :skills,  :email, :phone )
 
     if pt.save
       redirect_to pts_path
     else
       render 'new'
     end 
+  end  
 
+  def skill
+
+   @skills = Skill.all
+
+  
   end 
   
   

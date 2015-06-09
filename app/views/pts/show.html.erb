@@ -1,11 +1,18 @@
 <h1>This is show page</h1>
 
-<h1><%= @pts.name %></h1>
-<p>Profile <%= @pts.profile%></p>
-<p>Email: <%= @pts.email %></p>
-<p>Phone: <%= @pts.phone %></p>
+<h1><%= @pt.name %></h1>
+<p>Profile <%= @pt.profile%></p>
+<p>Email: <%= @pt.email %></p>
+<p>Phone: <%= @pt.phone %></p>
 
-#<%= link_to 'Add review', new_pt_review_path(@pts) %>
+<%= link_to 'Add review', new_pt_review_path(@pt) %>
+
+<% @pt.reviews.each do | review| %>
+<%= review.title %>
+<%= review.content %>
+<% end %>
+
+
 
 
 

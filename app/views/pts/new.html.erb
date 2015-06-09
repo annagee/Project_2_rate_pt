@@ -1,18 +1,33 @@
-<%=   form_for @pts do |f| %>
+<ul>
+<li><%=   form_for @pts do |f| %></li>
   
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <li><%= f.label :name %>
+      <%= f.text_field :name %>
+  </li>
 
-  <%= f.label :profile %>
-  <%= f.text_field :profile %>
+  <li><%= f.label :profile %>
+      <%= f.text_field :profile %>
+  </li> 
 
-  <%= f.label :email %>
-  <%= f.text_field :email%>
+  <li><%= f.label :skills %>
+      <%= f.text_field :skills %>
+      <%= check_box_tag 'skills[]', '1',false %>
+  </li>    
 
 
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
+        
 
-  <%= f.submit 'Submit' %>
+  <li> <%= f.label :email %>
+      <%= f.text_field :email%>
+  </li>
+
+
+  <li> <%= f.label :phone %>
+       <%= f.text_field :phone %>
+  </li>
+
+  <li><%= f.submit 'Submit' %>
+  </li>
+  </ul>
 
 <% end %>

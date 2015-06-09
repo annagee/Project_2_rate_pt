@@ -1,17 +1,11 @@
 class PtsController < ApplicationController
 
-  
-
   def index
     @pts = Pt.all
     @search = Pt.search(params[:q])
     @pts = @search.result(distinct: true)
-
-
   end  
 
-  
-  
 
   def new
     @pts = Pt.new
@@ -23,8 +17,6 @@ class PtsController < ApplicationController
    @pt = Pt.find(params[:id])
   end  
 
-
-
   def create
     pt = Pt.new params[:pt].permit(:name, :profile, :email, :phone, {skill_ids:[]})
   
@@ -34,6 +26,10 @@ class PtsController < ApplicationController
     else
       render 'new'
     end 
+  end  
+
+  def delete 
+
   end  
 
 

@@ -1,21 +1,28 @@
 <h1>This is show page</h1>
 
-<h1><%= @pt.name %></h1>
-<p>Profile <%= @pt.profile%></p>
-<p>Email: <%= @pt.email %></p>
-<p>Phone: <%= @pt.phone %></p>
+<h1 class="pt-name"><%= @pt.name %></h1>
+<div class ="pt-details">
+<p>Profile: </p>
+<p> <%= @pt.profile%></p>
+<p>Email: </p>
+<p>  <%= @pt.email %></p>
+<p>Phone: </p>
+<p> <%= @pt.phone %></p>
+</div>
 
+<div class="pt-skills">
 <% @pt.skills.each do |skill| %>
 <%= skill.name %>
 <% end %>
+</div>
 
 
-<%= link_to 'Add review', new_pt_review_path(@pt) %>
+<p><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
 
-<% @pt.reviews.each do | review| %>
-<%= review.title %>
-<%= review.content %>
-<% end %>
+<p><% @pt.reviews.each do | review| %>
+<p class="review-title"><%= review.title %></p>
+<p><%= review.content %></p>
+<% end %></p>
 
 <!-- <form action="http://pooleapp.com/stash/7d59f7b5-d7e9-41c0-a546-47848845b6b6/" method="post">
   <input type="hidden" name="redirect_to" value="{YOUR-THANKS-PAGE}" />

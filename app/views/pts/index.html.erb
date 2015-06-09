@@ -13,7 +13,15 @@ need to add search function
 <%= skill.name %>
 <% end %>
 <%= f.submit "Search"%>
+<% end %>
   
+
+<%= search_form_for @search do |f| %>
+<% Location.all.uniq.each do |location| %>
+<%= check_box_tag('q[locations_name_cont_any][]', location.name) %>
+<%= location.name %>
+<% end %>
+<%= f.submit "Search"%>
   
   <% end %>
 

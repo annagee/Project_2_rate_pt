@@ -7,6 +7,11 @@
    <%= skill.name %>
    <% end %>
 
+   <% @locations.each do |location| %>
+   <%= check_box_tag "pt[location_ids][]", location.id%>
+   <%= location.name %>
+   <% end %>
+
   <li><%= f.label :name %>
       <%= f.text_field :name %>
   </li>

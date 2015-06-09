@@ -4,12 +4,14 @@ class PtsController < ApplicationController
     @pts = Pt.all
     @search = Pt.search(params[:q])
     @pts = @search.result(distinct: true)
+    @locations = @search.result(distinct: true)
   end  
 
 
   def new
     @pts = Pt.new
     @skills = Skill.all
+    @locations =Location.all
   end  
 
 

@@ -24,4 +24,20 @@ s3 = Skill.create(name:'Core Conditioning')
 s4 = Skill.create(name: 'Weight Loss')
 s5 = Skill.create(name:'Functional Training')
 
+l1 = Location.create(name: 'North London')
+l2 = Location.create(name: 'South London')
+l3 = Location.create(name: 'West London')
+l4 = Location.create(name: 'East London')
+l5 = Location.create(name: 'North-West London')
+l6 = Location.create(name: 'North-East London')
+l7 = Location.create(name: 'South-West London')
+l8 = Location.create(name: 'South-East London')
+
+
+
+
+
+
+
+
 puts 'seeded!'

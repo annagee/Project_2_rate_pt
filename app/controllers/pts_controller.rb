@@ -4,10 +4,17 @@ class PtsController < ApplicationController
 
   def index
     @pts = Pt.all
+    @search = Pt.ransack(params[:q])
+    @found = @search.result
+    @ptfind = @q.result.includes(:skills).page(params[:page])
+
+
+
   end  
 
   def new
     @pts = Pt.new
+    @skills = Skill.all
   end  
 
 
@@ -18,7 +25,8 @@ class PtsController < ApplicationController
 
 
   def create
-    pt = Pt.new params[:pt].permit(:name, :profile, :skills,  :email, :phone )
+    pt = Pt.new params[:pt].permit(:name, :profile, :email, :phone, {skill_ids:[]})
+  
 
     if pt.save
       redirect_to pts_path
@@ -27,12 +35,7 @@ class PtsController < ApplicationController
     end 
   end  
 
-  def skill
 
-   @skills = Skill.all
-
-  
-  end 
   
   
 end  

@@ -1,6 +1,12 @@
 <ul>
 <li><%=   form_for @pts do |f| %></li>
   
+
+  <% @skills.each do |skill| %>
+   <%= check_box_tag "pt[skill_ids][]", skill.id%>
+   <%= skill.name %>
+   <% end %>
+
   <li><%= f.label :name %>
       <%= f.text_field :name %>
   </li>
@@ -10,8 +16,12 @@
   </li> 
 
   <li><%= f.label :skills %>
-      <%= f.text_field :skills %>
+      <%= f.check_box :skills %>
       <%= check_box_tag 'skills[]', '1',false %>
+
+     
+      
+
   </li>    
 
 

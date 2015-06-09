@@ -4,13 +4,14 @@ class PtsController < ApplicationController
 
   def index
     @pts = Pt.all
-    @search = Pt.ransack(params[:q])
-    @found = @search.result
-    @ptfind = @q.result.includes(:skills).page(params[:page])
-
+     @search = Pt.search(params[:q])
+    @skills = @search.result(distinct: true)
 
 
   end  
+
+  
+  
 
   def new
     @pts = Pt.new

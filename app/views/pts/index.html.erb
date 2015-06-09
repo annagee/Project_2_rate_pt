@@ -1,9 +1,24 @@
 <h1>This is index page</h1>
 
 
-need to add search function 
+ 
 <p><% @pts.each do |pt| %></p>
   <p><%= link_to pt.name, pt_path(pt) %></p>
   <% end %>
+need to add search function 
+ 
+<%= search_form_for @search do |f| %>
+<% Skill.all.uniq.each do |skill| %>
+<%= check_box_tag('q[skills_name_cont_any][]', skill.name) %>
+<%= skill.name %>
+<% end %>
+<%= f.submit "Search"%>
+  
+  
+  <% end %>
+
+
+
+
 
   

@@ -11,16 +11,16 @@
 </div>
 
 <div class="pt-skills">
-<h2>Skills</h2>
-<% @pt.skills.each do |skill| %>
-<%= skill.name %>
-<% end %>
+  <h2>Skills  </h2>
+     <% @pt.skills.each do |skill| %>
+  <li><%= skill.name %></li>
+  <% end %>
 </div>
 
 <div class="star-rating">
-  <p> Price<%= rating_for @pt, "price", :star => 8%></p>
-  <p> effectiveness<%= rating_for @pt, "effectiveness", :half_show => true%></p>
-  <p> knowledge<%= rating_for @pt, "knowledge", :enable_half => true, :half_show => true%></p>
+   Price<%= rating_for @pt, "price", :star => 8%>
+   Effectiveness<%= rating_for @pt, "effectiveness", :half_show => true%>
+  knowledge<%= rating_for @pt, "knowledge", :enable_half => true, :half_show => true%>
 </div>
 
 
@@ -31,7 +31,10 @@
   <p><%= review.content %></p>
   <% end %></p>
 
+<p class="book-pt"><%= link_to 'Book PT', new_resource_path(@pt) %></p>
+
 <p class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
+
 
 <!--  -->>
 

@@ -1,11 +1,7 @@
-<h1>This is index page</h1>
-
-
  
 <p><% @pts.each do |pt| %></p>
   <p><%= link_to pt.name, pt_path(pt) %></p>
 <% end %>
-need to add search function 
 
 <p class="add-pt"><%= link_to 'Add Pt', new_pt_path(@pt) %></p>
  

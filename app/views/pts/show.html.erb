@@ -16,6 +16,11 @@
 <% end %>
 </div>
 
+<div class="star-rating">
+  <%= rating_for @pt "price" :enable_half => true :half_show => true%>
+  <%= rating_for @pt "effectiveness" :enable_half => true :half_show => true%>
+  <%= rating_for @pt "knowledge" :enable_half => true :halt_show => true%>
+
 
 <p class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
 

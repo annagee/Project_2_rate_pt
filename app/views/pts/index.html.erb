@@ -6,6 +6,8 @@
   <p><%= link_to pt.name, pt_path(pt) %></p>
   <% end %>
 need to add search function 
+
+<p class="add-pt"><%= link_to 'Add Pt', new_pt_path(@pt) %></p>
  
 <%= search_form_for @search do |f| %>
 <% Skill.all.uniq.each do |skill| %>

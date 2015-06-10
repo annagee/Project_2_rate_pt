@@ -1,4 +1,5 @@
 class Pt < ActiveRecord::Base
+  ratyrate_rateable "price", "effectiveness", "knowledge"
   has_many :reviews
   has_many :pt_skills
   has_many :skills, through: :pt_skills

@@ -1,19 +1,36 @@
 Rails.application.routes.draw do
-  resources :resources do
-	  resources :bookings
-	end
-  post '/rate' => 'rater#create', :as => 'rate'
+  # get 'sessions/new'
+
+  # get 'sessions/create'
+
+  # get 'sessions/destory'
+
+ #  resources :resources do
+	#   resources :bookings
+	# end
+ #  post '/rate' => 'rater#create', :as => 'rate'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-    root 'pts#index'
+    root 'users#index'
+    
+    get 'logout', to: 'sessions#destory', as: 'logout'
+
+    resources :users
+    resources :sessions
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
     resources :pts do
       resources :reviews
     end
+
+    resources :resources do
+    resources :bookings
+  end
+  post '/rate' => 'rater#create', :as => 'rate'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

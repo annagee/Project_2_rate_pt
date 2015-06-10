@@ -22,6 +22,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'thin'
+gem 'bcrypt', '~> 3.1.0' 
+
+gem 'ransack'
+gem 'ratyrate'
+gem 'bookable', '~> 0.0.52'
+gem 'responders'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -37,13 +44,6 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'pry'
-  gem 'ransack'
-  gem 'ratyrate'
-  gem 'bookable', '~> 0.0.52'
-  gem 'responders'
-
-
-
 
 
   # Access an IRB console on exception pages or by using <%= console %> in views

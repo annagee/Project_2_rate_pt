@@ -25,10 +25,15 @@
 
 <nav class="nav">
   <ul>
-    <!-- <li><a href = "/"><Home</li> -->
-    <li>Trainer Search</li>
-    <li>Book a Trainer</li>
+ <li><a href="/index"><Home</li> 
+    <li><a href="/search"><Trainer Search</li>
+    <!-- <li><a href="/book"><Book a Trainer</li> -->
     <li>Login</li>
+
+
+    <li><%= link_to('Home', root_path, class: 'nav-link') %></li> 
+   <li><%= link_to('Trainer Search', pts_path, class: 'nav-link') %></li>
+   <!-- <li><%# link_to('Book a Trainer', booking_path, class: 'nav-link') %> --></li>
   </ul>
 </nav>
 <%= yield %>

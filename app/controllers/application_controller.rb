@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
+  protect_from_forgery with: :exception
+
   helper_method :current_user
   
   private
@@ -11,8 +13,8 @@ class ApplicationController < ActionController::Base
   def current_user
     begin
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    # rescue ActiveRecord: :RecordNotFound
-      # session[:user_id] = nil
+       rescue ActiveRecord::RecordNotFound
+      session[:user_id] = nil
     end  
   end
 

@@ -1,13 +1,11 @@
-
-
 <h1 class="pt-name"><%= @pt.name %></h1>
 <div class ="pt-details">
-<p>Profile: </p>
-<p> <%= @pt.profile%></p>
-<p>Email: </p>
-<p>  <%= @pt.email %></p>
-<p>Phone: </p>
-<p> <%= @pt.phone %></p>
+  <p>Profile: </p>
+  <p><%= @pt.profile%></p>
+  <p>Email: </p>
+  <p><%= @pt.email %></p>
+  <p>Phone: </p>
+  <p><%= @pt.phone %></p>
 </div>
 
 <div class="pt-skills">
@@ -17,38 +15,31 @@
   <% end %>
 </div>
 
+<%= imdb_style_rating_for @pt, current_user%>
+
 <div class="star-rating">
-   Price<%= rating_for @pt, "price", :star => 8%>
-   Effectiveness<%= rating_for @pt, "effectiveness", :half_show => true%>
-  knowledge<%= rating_for @pt, "knowledge", :enable_half => true, :half_show => true%>
+  <ul>
+    <li>Price <%= rating_for @pt, "price", star: 8 %></li>
+    <li>Effectiveness <%= rating_for @pt, "effectiveness", half_show: true %></li>
+    <li>Knowledge <%= rating_for @pt, "knowledge", enable_half: true, half_show: true %></li>
+  </ul>
 </div>
 
+<p class="book-pt"><%= link_to 'Book PT', new_resource_path(@pt) %></p>
+<p class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
 
 <div class="reviews">
   <h2>Reviews</h2>
   <p><% @pt.reviews.each do | review| %>
-  <p class="review-title"><%= review.title %></p>
-  <p><%= review.content %></p>
+    <p class="review-title"><%= review.title %></p>
+    <p><%= review.content %></p>
   <% end %></p>
-
-<p class="book-pt"><%= link_to 'Book PT', new_resource_path(@pt) %></p>
-
-<p class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
-
-
-<!--  -->>
+</div>
 
 <!-- <form action="http://pooleapp.com/stash/7d59f7b5-d7e9-41c0-a546-47848845b6b6/" method="post">
   <input type="hidden" name="redirect_to" value="{YOUR-THANKS-PAGE}" />
   <input type="text" name="whatever" />
   <input type="submit" value="submit" />
 </form> -->
-
-
-
-
-
-
-
 
 <!-- new to show pts -->

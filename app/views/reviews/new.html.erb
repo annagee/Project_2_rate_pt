@@ -6,20 +6,16 @@
   <p><%= form.label :content %>
   <%= form.text_field :content %></p>
 
-
   <p><%= form.label :author%>
-  <%= form.text_field :author %>
+  <%= form.text_field :author %></p>
 
-
-<!-- # -->
-
-  </p>
-
-
-
-
-
- 
+  <div class="star-rating">
+    <ul>
+      <li>Price <%= rating_for @pt, "price", star: 8 %></li>
+      <li>Effectiveness <%= rating_for @pt, "effectiveness", half_show: true %></li>
+      <li>Knowledge <%= rating_for @pt, "knowledge", enable_half: true, half_show: true%></li>
+    </ul>
+  </div>
 
   <p><%= form.submit 'Submit' %></p>
 

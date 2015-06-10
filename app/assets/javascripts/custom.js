@@ -1,130 +1,130 @@
-$(document).ready(function(){
-  calendar();
-});
+// $(document).ready(function(){
+//   calendar();
+// });
 
-$(document).on('page:load', function() {
-  calendar();
-});
+// $(document).on('page:load', function() {
+//   calendar();
+// });
 
 
-var calendar = function(){
+// var calendar = function(){
 
-    // page is now ready, initialize the calendar...
+//     // page is now ready, initialize the calendar...
 
-    var current_resource = function(){
-    	return window.location.href.match(/resources\/(\d+)\/bookings/)[1];
-    };
+//     var current_resource = function(){
+//     	return window.location.href.match(/resources\/(\d+)\/bookings/)[1];
+//     };
 
-    var today_or_later = function(){
-      var check = $('#calendar').fullCalendar('getDate');
-      var today = new Date();
-      if(check < today) {
-        return false;
-      } else {
-        return true;
-      };
-    };
+//     var today_or_later = function(){
+//       var check = $('#calendar').fullCalendar('getDate');
+//       var today = new Date();
+//       if(check < today) {
+//         return false;
+//       } else {
+//         return true;
+//       };
+//     };
 
-    $('#calendar').fullCalendar({
-        header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
+//     $('#calendar').fullCalendar({
+//         header: {
+// 				left: 'prev,next today',
+// 				center: 'title',
+// 				right: 'month,agendaWeek,agendaDay'
+// 			},
 
-			eventSources: [{  
-    		url: '/resources/'+current_resource()+'/bookings/',  
-   		}],
+// 			eventSources: [{  
+//     		url: '/resources/'+current_resource()+'/bookings/',  
+//    		}],
 
-   		selectable: {
-      month: false,
-      agenda: true
-   	}	,
+//    		selectable: {
+//       month: false,
+//       agenda: true
+//    	}	,
 
-    editable: true,
-    eventStartEditable: true, 
-    eventDurationEditable: true,
+//     editable: true,
+//     eventStartEditable: true, 
+//     eventDurationEditable: true,
 
-    eventDrop: function(booking) {
-      var length = (booking.end-booking.start)/(3600000);
+//     eventDrop: function(booking) {
+//       var length = (booking.end-booking.start)/(3600000);
 
-        function updateEvent(booking) {
-              $.ajax(
-                '/resources/'+current_resource()+'/bookings/'+booking.id,
-                { 'type': 'PATCH',
+//         function updateEvent(booking) {
+//               $.ajax(
+//                 '/resources/'+current_resource()+'/bookings/'+booking.id,
+//                 { 'type': 'PATCH',
 
-                  data: { booking: { 
-                           start_time: "" + booking.start,
-                           length: length
-                         } }
-                }
-              );
-          };
+//                   data: { booking: { 
+//                            start_time: "" + booking.start,
+//                            length: length
+//                          } }
+//                 }
+//               );
+//           };
 
-        updateEvent(booking);
+//         updateEvent(booking);
 
-      }
-    ,
+//       }
+//     ,
 
-    eventResize: function(booking) {
-      var length = (booking.end-booking.start)/(3600000);
+//     eventResize: function(booking) {
+//       var length = (booking.end-booking.start)/(3600000);
 
-        function updateEvent(booking) {
-              $.ajax(
-                '/resources/'+current_resource()+'/bookings/'+booking.id,
-                { 'type': 'PATCH',
+//         function updateEvent(booking) {
+//               $.ajax(
+//                 '/resources/'+current_resource()+'/bookings/'+booking.id,
+//                 { 'type': 'PATCH',
 
-                  data: { booking: { 
-                           start_time: "" + booking.start,
-                           length: length
-                         } }
-                }
-              );
-          };
+//                   data: { booking: { 
+//                            start_time: "" + booking.start,
+//                            length: length
+//                          } }
+//                 }
+//               );
+//           };
 
-        updateEvent(booking);
+//         updateEvent(booking);
 
-      }
-    ,
+//       }
+//     ,
 
-   	dayClick: function(date, allDay, jsEvent, view) {
-      // console.log(view.name);
-      if (view.name === "month") { 
-        $('#calendar').fullCalendar('gotoDate', date);
-        $('#calendar').fullCalendar('changeView', 'agendaDay');
-      }
-    }
-    ,
+//    	dayClick: function(date, allDay, jsEvent, view) {
+//       // console.log(view.name);
+//       if (view.name === "month") { 
+//         $('#calendar').fullCalendar('gotoDate', date);
+//         $('#calendar').fullCalendar('changeView', 'agendaDay');
+//       }
+//     }
+//     ,
 
- 		select: function(start, end, allDay) {
-      if (window.location.href.match(/new/)) {
-        if(today_or_later()) {
-        	var length = (end-start)/(3600000);
+//  		select: function(start, end, allDay) {
+//       if (window.location.href.match(/new/)) {
+//         if(today_or_later()) {
+//         	var length = (end-start)/(3600000);
 
-          $('#calendar').fullCalendar('renderEvent', 
-            {
-              start: start,
-              end: end,
-              allDay: false
-            }
-          );
+//           $('#calendar').fullCalendar('renderEvent', 
+//             {
+//               start: start,
+//               end: end,
+//               allDay: false
+//             }
+//           );
 
-          jQuery.post(
-            '/resources/'+current_resource()+'/bookings',
+//           jQuery.post(
+//             '/resources/'+current_resource()+'/bookings',
             
-            { booking: {
-              start_time: start,
-              length: length,
+//             { booking: {
+//               start_time: start,
+//               length: length,
 
-          	} }
-          );
+//           	} }
+//           );
 
-    	    } else {
-            // alert("help!");
-        }
-      }
-    }
+//     	    } else {
+//             // alert("help!");
+//         }
+//       }
+//     }
 
-	});
+// 	});
 
-};
+// };

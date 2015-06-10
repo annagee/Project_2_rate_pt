@@ -2,21 +2,20 @@
 <html>
 <head>
   <title>RatePt</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<% flash.each do |name, msg| %>
-  <div class="flash-message flash-message-<%=name %>">
-    <%=msg%>
-  </div>  
-<% end %>
-
+  <% flash.each do |name, msg| %>
+    <div class="flash-message flash-message-<%=name %>">
+      <%=msg%>
+    </div>  
+  <% end %>
 
   <% if current_user %>
-     <p>hello <% current_user.email %></p> 
+    <p>hello <% current_user.email %></p> 
     <p><% link_to 'log out', logout_path %></p> 
   <% else %>
     <p><% link_to 'log in', new_session_path %></p>
@@ -31,10 +30,8 @@
 
     <!-- <li><a href="/book"><Book a Trainer</li> -->
     <li>Login</li>
-
-
     <li><%= link_to('Home', root_path, class: 'nav-link') %></li> 
-   <li><%= link_to('Trainer Search', pts_path, class: 'nav-link') %></li>
+    <li><%= link_to('Trainer Search', pts_path, class: 'nav-link') %></li>
     <li><%= link_to('Booking', resources_path, class: 'nav-link') %></li>
    <!-- <li><%# link_to('Book a Trainer', booking_path, class: 'nav-link') %> --></li>
   </ul>

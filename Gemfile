@@ -40,6 +40,7 @@ group :development, :test do
   gem 'ransack'
   gem 'ratyrate'
   gem 'bookable', '~> 0.0.52'
+  gem 'responders'
 
 
 

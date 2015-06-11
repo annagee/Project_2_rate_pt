@@ -2,51 +2,39 @@
 <div class="pt-wrapper">
   <div class ="pt-details">
     <p><h2>Profile: </h2></p>
-    <p class="profile"><%= @pt.profile%></p>
-    <!-- <p><span>Email: </span>
-    <span><%= @pt.email %></span></p>
-    <p>Phone: </p>
-    <p><%= @pt.phone %></p>
-  </div> -->
-
-  <div class="pt-skills">
-    <h2>Skills  </h2>
-       <% @pt.skills.each do |skill| %>
-    <li><%= skill.name %></li>
-    <% end %>
-  </div>
-
-  <%= imdb_style_rating_for @pt, current_user%>
-
-  <div class="star-rating">
-    <ul>
-      <li>Price <%= rating_for @pt, "price", star: 8 %></li>
-      <li>Effectiveness <%= rating_for @pt, "effectiveness", half_show: true %></li>
-      <li>Knowledge <%= rating_for @pt, "knowledge", enable_half: true, half_show: true %></li>
-    </ul>
-  </div>
+    <p class="pt-profile"><%= @pt.profile%></p>
+    <div class="pt-skills">
+      <h2>Skills  </h2>
+         <% @pt.skills.each do |skill| %>
+      <li><%= skill.name %></li>
+      <% end %>
+    </div>
+    <%= imdb_style_rating_for @pt, current_user, star: 8%>
+    <div class="star-rating">
+      <ul>
+        <li>Price <%= rating_for @pt, "price", star: 8 %></li>
+        <li>Effectiveness <%= rating_for @pt, "effectiveness", half_show: true %></li>
+        <li>Knowledge <%= rating_for @pt, "knowledge", enable_half: true, half_show: true %></li>
+      </ul>
+    </div>
 </div>
-
 <div class ="links">
   <ul>
-    <li class="book-pt"><%= link_to 'Book PT', new_resource_path(@pt) %></li>
-    <li class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></li>
-
-
-   <!-- <li class="review"> -->
+    <li class="book-pt"><%= link_to 'Book PT', new_resource_path(@pt) %>
+    </li>
+    <li class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %>
+    </li>
+    <!-- <li class="review"> -->
    <button class='show-review'>Reviews</button>
-    
-    </ul>
-  </div>
-
-  <div class="reviews">
+   </ul>
+</div>
+<div class="reviews">
     <h2>Reviews</h2>
     <p><% @pt.reviews.each do | review| %></p>
     <p class="review-title">Title:<%= review.title %></p>
     <p><%= review.content %></p> 
     <p>Author:<%= review.author %></p>
-    
-  <% end %>
+    <% end %>
 </div>
 
 <!-- <form action="http://pooleapp.com/stash/7d59f7b5-d7e9-41c0-a546-47848845b6b6/" method="post">

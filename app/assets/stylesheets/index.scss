@@ -1,27 +1,69 @@
 body{
   background-color: orange;
-  
+  // background-image: url("fotoPersonaltrainer1.jpg")
 
 }
 
-  .nav{
-    background-color: green;
+ .nav {
+  background-color: green;
+  background-image: url("fotoPersonaltrainer1.jpg")
+ }
+
+  .nav ul{
+    // background-color: green;
+    text-decoration: none;
     text-align: center;
+    list-style: none;
+    font: white;
+    // display: inline;
+
     
   }
 
   .pt-name {
     text-align: left;
   }
+
+  .pt-wrapper{
+   width: 90%;
+   padding: 20px 30px;
+   display: inline-block;
+ }  
+   .pt-name {
+    text-align: left;
+  }
  .pt-details{
-  text-align: center;
-  // display: inline-block;
+  // text-align: center;
+  display: inline-block;
+ }
+
+ .pt-skills li {
+  display: inline-block;
  }
 
  .review-title {
   font-style: italic;
  }
 
+.add-skills {
+  display: inline-block
+}
+ .adding-pt {
+  list-style: none;
+  padding: 20px 250px;
+ }
+
+ .profile{
+  height: 200px;
+ }
+ 
+ .list-of-pts{
+  display: inline-block;
+ }
+
+
  .review-form {
   display: inline-block;
  }
+
+ 

@@ -1,48 +1,46 @@
-<ul>
-<li><%=   form_for @pts do |f| %></li>
-  
 
-  <% @skills.each do |skill| %>
-   <%= check_box_tag "pt[skill_ids][]", skill.id%>
-   <%= skill.name %>
-   <% end %>
+<h3>Personal Trainer Details</h3>
 
-   <% @locations.each do |location| %>
-   <%= check_box_tag "pt[location_ids][]", location.id%>
-   <%= location.name %>
-   <% end %>
+<ul class="adding-pt">
+  <li><%=   form_for @pts do |f| %></li>
 
-  <li><%= f.label :name %>
-      <%= f.text_field :name %>
-  </li>
+    <li><%= f.label :name %>
 
-  <li><%= f.label :profile %>
-      <%= f.text_field :profile %>
-  </li> 
+    <p><%= f.text_field :name %></p>
+    </li>
 
-  <li><%= f.label :skills %>
-      <%= f.check_box :skills %>
-      <%= check_box_tag 'skills[]', '1',false %>
+    <li><%= f.label :profile %>
+        <p><%= f.text_field :profile %></p>
+    </li>
+    
+      <li> <%= f.label :email %>
+       <p> <%= f.text_field :email%></p>
+    </li>
+
+
+    <li> <%= f.label :phone %>
+        <p> <%= f.text_field :phone %></p>
+    </li>
+
+    <p class="add-skills">
+    <h3>Skills</h3>
+    <% @skills.each do |skill| %>
+     <%= check_box_tag "pt[skill_ids][]", skill.id%>
+     <%= skill.name %>
+     <% end %>
+     </p>
+     
+     <p>
+     <h3>Location</h3>
+     <% @locations.each do |location| %>
+     <%= check_box_tag "pt[location_ids][]", location.id%>
+     <%= location.name %>
+     <% end %>
+     </p>
 
      
-      
-
-  </li>    
-
-
-        
-
-  <li> <%= f.label :email %>
-      <%= f.text_field :email%>
-  </li>
-
-
-  <li> <%= f.label :phone %>
-       <%= f.text_field :phone %>
-  </li>
-
-  <li><%= f.submit 'Submit' %>
-  </li>
+    
+  
   </ul>
 
 <% end %>

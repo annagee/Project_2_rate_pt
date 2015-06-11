@@ -7,6 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+<div class="nav">
+<!-- <img src="fotoPersonaltrainer1.jpg">
+ -->  <ul>
+ <li><a href="/index"><Home</li> 
+    <li><a href="/search"><Trainer Search</li>
+    <li><a href="/resources"><Booking Search</li>
+
+    <!-- <li><a href="/book"><Book a Trainer</li> -->
+    <li>Login</li>
+    <li><%= link_to('Home', root_path, class: 'nav-link') %></li> 
+    <li><%= link_to('Trainer Search', pts_path, class: 'nav-link') %></li>
+    <li><%= link_to('Booking', resources_path, class: 'nav-link') %></li>
+   <!-- <li><%# link_to('Book a Trainer', booking_path, class: 'nav-link') %> --></li>
+  </ul>
+</div>
+</header>
+
 
   <% flash.each do |name, msg| %>
     <div class="flash-message flash-message-<%=name %>">
@@ -22,20 +40,6 @@
     <p><% link_to 'sign up', new_user_path %></p> 
   <% end %> 
 
-<nav class="nav">
-  <ul>
- <li><a href="/index"><Home</li> 
-    <li><a href="/search"><Trainer Search</li>
-    <li><a href="/resources"><Booking Search</li>
-
-    <!-- <li><a href="/book"><Book a Trainer</li> -->
-    <li>Login</li>
-    <li><%= link_to('Home', root_path, class: 'nav-link') %></li> 
-    <li><%= link_to('Trainer Search', pts_path, class: 'nav-link') %></li>
-    <li><%= link_to('Booking', resources_path, class: 'nav-link') %></li>
-   <!-- <li><%# link_to('Book a Trainer', booking_path, class: 'nav-link') %> --></li>
-  </ul>
-</nav>
 <%= yield %>
 
 </body>

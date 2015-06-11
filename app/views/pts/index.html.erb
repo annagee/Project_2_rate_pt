@@ -1,29 +1,32 @@
  
 <div class="list-of-pts">
-<% @pts.each do |pt| %></p>
-  <p><%= link_to pt.name, pt_path(pt) %>
+<% @pts.each do |pt| %>
+  <%= link_to pt.name, pt_path(pt) %>
 <% end %>
 </div>
 
-<p class="add-pt"><%= link_to 'Add Pt', new_pt_path(@pt) %></p>
+<div class ="search-wrapper"
+<div class="add-pt"><%= link_to 'Add Pt', new_pt_path(@pt) %></div>
  <div class="search-for-pt">
-<p><%= search_form_for @search do |f| %>
+<ul><%= search_form_for @search do |f| %>
   <% Skill.all.uniq.each do |skill| %>
-    <%= check_box_tag('q[skills_name_cont_any][]', skill.name) %>
+    <li><%= check_box_tag('q[skills_name_cont_any][]', skill.name) %>
     <%= skill.name %>
-  <% end %>
-  <%= f.submit "Search"%>
+  <% end %></li>
+  <%= f.submit "Search"%></ul>
 <% end %>
-  </p>
+  </div>
 
-<p><%= search_form_for @search do |f| %>
+<div class ="location-search">
+ <ul><%= search_form_for @search do |f| %>
   <% Location.all.uniq.each do |location| %>
-    <%= check_box_tag('q[locations_name_cont_any][]', location.name) %>
+    <li><%= check_box_tag('q[locations_name_cont_any][]', location.name) %>
     <%= location.name %>
-  <% end %>
-  <%= f.submit "Search"%>
+  <% end %></li>
+  <%= f.submit "Search"%></ul>
 <% end %>
-</p>
+</div>
+</div>  
 
 
 

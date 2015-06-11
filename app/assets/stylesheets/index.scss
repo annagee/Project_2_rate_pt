@@ -5,8 +5,11 @@ body{
 }
 
  .nav {
-  background-color: green;
-  background-image: url("fotoPersonaltrainer1.jpg")
+  background-color: white;
+  background-image: url("fotoPersonaltrainer1.jpg");
+  height: 100px;
+  text: white;
+  // display: inline;
  }
 
   .nav ul{
@@ -15,9 +18,21 @@ body{
     text-align: center;
     list-style: none;
     font: white;
-    // display: inline;
+    // display: inline-block;
 
     
+  }
+  .nav li {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 50px;
+    float: right;
+
+  }
+
+  .nav li a{
+    text-decoration: none;
+    color: #e7e7e7;
   }
 
   .pt-name {
@@ -68,10 +83,23 @@ body{
 
  .list-of-pts, .search-wrapper {
    padding: 30px;
+   // display: inline-block;
    position: relative;
  }
 
- .search-wrapper {
+ .search-wrapper ul {
+  display: inline;
+  // position: relative;
+  // padding: 60px 30px;
+  float: left;
+  // float: right;
+ } 
+
+ .location-search{
+  padding: 60px 30;
+
+ }
+
+ .location-search{
   display: inline-block;
-  // padding: 60px 30px
  }

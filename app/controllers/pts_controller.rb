@@ -13,8 +13,11 @@ class PtsController < ApplicationController
     @skills = Skill.all
     @locations =Location.all
   end  
-
-
+  
+  def search
+    
+  end 
+  
   def show
    @pt = Pt.find(params[:id])
   end  

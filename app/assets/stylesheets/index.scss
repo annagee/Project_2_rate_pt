@@ -1,5 +1,5 @@
 body{
-  background-color: orange;
+  background-color: #FFEFFI;
   // background-image: url("fotoPersonaltrainer1.jpg")
 
 }
@@ -27,26 +27,31 @@ body{
     padding: 10px;
     margin-top: 50px;
     float: right;
+    text-border: 5px black;
+    // text-shadow: 5px  5px black;
 
   }
 
   .nav li a{
     text-decoration: none;
+    // text-shadow: 5px  black;
+    // text-border: 5px black;
+    -webkit-text-stroke: 1px black;
+    font-size: 25px;
     color: #e7e7e7;
   }
 
   .pt-name {
     text-align: left;
+    padding: 50px;
   }
 
   .pt-wrapper{
    width: 90%;
    padding: 20px 30px;
-   display: inline-block;
+   // display: inline;
  }  
-   .pt-name {
-    text-align: left;
-  }
+   
  .pt-details{
   // text-align: center;
   display: inline-block;

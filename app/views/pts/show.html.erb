@@ -1,13 +1,13 @@
 <h1 class="pt-name"><%= @pt.name %></h1>
 <div class="pt-wrapper">
   <div class ="pt-details">
-    </p><span>Profile: </span>
-    <span><%= @pt.profile%></span></p>
+    <p><h2>Profile: </h2></p>
+    <p class="profile"><%= @pt.profile%></p>
     <!-- <p><span>Email: </span>
     <span><%= @pt.email %></span></p>
     <p>Phone: </p>
     <p><%= @pt.phone %></p>
- -->  </div>
+  </div> -->
 
   <div class="pt-skills">
     <h2>Skills  </h2>
@@ -28,18 +28,31 @@
 </div>
 
 <div class ="links">
-  <p class="book-pt"><%= link_to 'Book PT', new_resource_path(@pt) %></p>
-  <p class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></p>
-</div>
+  <ul>
+    <li class="book-pt"><%= link_to 'Book PT', new_resource_path(@pt) %></li>
+    <li class="add-review"><%= link_to 'Add review', new_pt_review_path(@pt) %></li>
 
- <div class="review">
- <%= link_to 'Reviews', pt_reviews_path(@pt)%>
+
+   <!-- <li class="review"> -->
+   <button class='show-review'>Reviews</button>
+    
+    </ul>
   </div>
+
+  <div class="reviews">
+    <h2>Reviews</h2>
+    <p><% @pt.reviews.each do | review| %></p>
+    <p class="review-title">Title:<%= review.title %></p>
+    <p><%= review.content %></p> 
+    <p>Author:<%= review.author %></p>
+    
+  <% end %>
+</div>
 
 <!-- <form action="http://pooleapp.com/stash/7d59f7b5-d7e9-41c0-a546-47848845b6b6/" method="post">
   <input type="hidden" name="redirect_to" value="{YOUR-THANKS-PAGE}" />
   <input type="text" name="whatever" />
   <input type="submit" value="submit" />
-</form> -->
+</form>
 
 <!-- new to show pts -->

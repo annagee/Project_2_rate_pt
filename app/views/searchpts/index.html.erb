@@ -1,3 +1,12 @@
+
+<div class="list-of-pts">
+<% @pts.each do |pt| %>
+  <%= link_to pt.name, pt_path(pt) %>
+<% end %>
+</div>
+
+
+
 <div class ="search-wrapper">
 <div class="add-pt"><%= link_to 'Add Pt', new_pt_path(@pt) %></div>
  <ul class="search-for-pt">

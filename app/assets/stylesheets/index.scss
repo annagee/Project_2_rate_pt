@@ -4,6 +4,25 @@ body{
 
 }
 
+.home-wrapper{
+  font-size: 20px;
+  display: inline-block;
+  width: 100%;
+}
+
+#left {
+  float: left;
+  background-color: blue;
+  width: 50%;
+
+}
+
+#right {
+  float: right;
+  background-color: red;
+  width: 50%;
+}
+
  .nav {
   background-color: white;
   background-image: url("fotoPersonaltrainer1.jpg");
@@ -18,7 +37,7 @@ body{
     text-align: center;
     list-style: none;
     font: white;
-    // display: inline-block;
+      
 
     
   }
@@ -41,25 +60,7 @@ body{
     color: #e7e7e7;
   }
 
-  .pt-name {
-    text-align: left;
-    padding: 50px;
-  }
-
-  .pt-wrapper{
-   width: 90%;
-   padding: 20px 30px;
-   // display: inline;
- }  
    
- .pt-details{
-  // text-align: center;
-  display: inline-block;
- }
-
- .pt-skills li {
-  display: inline-block;
- }
 
  .review-title {
   font-style: italic;
@@ -73,9 +74,24 @@ body{
   padding: 20px 250px;
  }
 
- .profile{
-  height: 200px;
+.links li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.links li a {
+  text-decoration: none;
+  color: black;
+  text-align: center
+}
+ 
+
+
+ .reviews {
+  display: none;
  }
+
+ 
  
  .list-of-pts{
   // display: inline-block;

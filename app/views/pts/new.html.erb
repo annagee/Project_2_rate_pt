@@ -10,7 +10,7 @@
     </li>
 
     <li><%= f.label :profile %>
-        <p><%= f.text_field :profile %></p>
+        <p class="profile"><%= f.text_field :profile %></p>
     </li>
     
       <li> <%= f.label :email %>
@@ -38,9 +38,10 @@
      <% end %>
      </p>
 
-     
+    
     
   
   </ul>
 
+  <p><%= f.submit 'Submit' %></p>
 <% end %>

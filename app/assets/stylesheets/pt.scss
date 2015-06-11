@@ -1,0 +1,98 @@
+.add-skills {
+  display: inline-block
+}
+ .adding-pt {
+  list-style: none;
+  padding: 20px 250px;
+ }
+
+.links li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.links li a {
+  text-decoration: none;
+  color: black;
+  text-align: center
+}
+ 
+.book-pt {
+  padding: 10px;
+}
+
+.add-review{ 
+padding: 10px;
+}
+
+.review {
+  padding: 10px;
+}
+
+ .pt-details {
+  // float: right;
+  height: 200px 
+  // display: inline-block;
+
+ }
+
+ .reviews {
+  display: none;
+ }
+
+ .profile{
+  background-image: url("kettlebells.jpeg");
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 500px;
+
+  // text-align: center;
+
+   // border: 5px solid black;
+ }
+ .pt-name {
+    text-align: left;
+    padding: 50px;
+  }
+
+  .pt-wrapper{
+   width: 90%;
+   padding: 20px 30px;
+   display: inline-block;
+   // background-image: url("kettlebells.jpeg");
+ } 
+
+ .pt-skills li {
+  display: inline-block;
+ }
+
+
+.book-pt {
+  padding: 10px;
+}
+
+.add-review{ 
+padding: 10px;
+}
+
+.review {
+  padding: 10px;
+}
+
+ .pt-details {
+  // float: right;
+  height: 200px 
+
+ }
+
+
+ .profile{
+  background-image: url("kettlebells.jpeg");
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 500px;
+
+  // text-align: center;
+
+   // border: 5px solid black;
+  }

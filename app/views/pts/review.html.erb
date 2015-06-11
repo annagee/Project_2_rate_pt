@@ -1,0 +1,9 @@
+<div class="reviews">
+  <h2>Reviews</h2>
+  <p><% @pt.reviews.each do | review| %>
+    <p class="review-title">Title:<%= review.title %></p>
+    <p><%= review.content %></p> 
+    <p>Author:<%= review.author %></p>
+    
+  <% end %></p>
+</div>

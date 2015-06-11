@@ -5,27 +5,27 @@
 <% end %>
 </div>
 
-<div class ="search-wrapper"
+<div class ="search-wrapper">
 <div class="add-pt"><%= link_to 'Add Pt', new_pt_path(@pt) %></div>
- <div class="search-for-pt">
-<ul><%= search_form_for @search do |f| %>
+ <ul class="search-for-pt">
+  <%= search_form_for @search do |f| %>
   <% Skill.all.uniq.each do |skill| %>
     <li><%= check_box_tag('q[skills_name_cont_any][]', skill.name) %>
     <%= skill.name %>
   <% end %></li>
   <%= f.submit "Search"%></ul>
 <% end %>
-  </div>
+  
 
-<div class ="location-search">
- <ul><%= search_form_for @search do |f| %>
+<ul class ="location-search">
+ <%= search_form_for @search do |f| %>
   <% Location.all.uniq.each do |location| %>
     <li><%= check_box_tag('q[locations_name_cont_any][]', location.name) %>
     <%= location.name %>
   <% end %></li>
   <%= f.submit "Search"%></ul>
 <% end %>
-</div>
+
 </div>  
 
 

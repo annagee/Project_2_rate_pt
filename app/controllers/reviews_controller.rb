@@ -1,9 +1,20 @@
 class ReviewsController < ApplicationController
 
+  def index
+    @pt = Pt.find(params[:pt_id])
+    reviews = Review.all
+  end
+
+  
   def new
     @review = Review.new
     @pt = Pt.find(params[:pt_id])
   end  
+
+  # def index
+  #   @pt = Pt.all
+  #   reviews = Review.all
+  # end
 
    def create
     @pt = Pt.find(params[:pt_id])

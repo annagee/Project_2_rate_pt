@@ -58,7 +58,7 @@ body{
  }
  
  .list-of-pts{
-  display: inline-block;
+  // display: inline-block;
  }
 
 
@@ -67,7 +67,8 @@ body{
  }
 
  .list-of-pts, .search-wrapper {
-   padding: 30px 
+   padding: 30px;
+   position: relative;
  }
 
  .search-wrapper {

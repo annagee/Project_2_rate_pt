@@ -3,19 +3,45 @@
 <div class="home-wrapper">
 <div class="right">
 
-</li>Find a PT</div>
+<!-- </li>Find a PT</div>
 <div class="left"><%= link_to 'Book PT', searchpts_path(@pt) %> Become a PT</div>
-</div>
+</div> -->
 
 
 </div> 
 
-<% @pts.each do |pt|  %> 
-  <%= pt.name %>
+
+
+<div class="list-of-pts">
+<% @pts.each do |pt| %>
+ <div class="pt-index"><%= link_to pt.name, pt_path(pt) %></div>
 <% end %>
-<%= @locations %>
+</div>
 
 
+
+<div class ="search-wrapper">
+<div class="add-pt"><%= link_to 'Add Pt', new_pt_path(@pt) %></div>
+ <ul class="search-for-pt">
+  <%= search_form_for @search do |f| %>
+  <% Skill.all.uniq.each do |skill| %>
+    <li><%= check_box_tag('q[skills_name_cont_any][]', skill.name) %>
+    <%= skill.name %>
+  <% end %></li>
+  <%= f.submit "Search"%></ul>
+<% end %>
+  
+
+<ul class ="location-search">
+ <%= search_form_for @search do |f| %>
+  <% Location.all.uniq.each do |location| %>
+    <li><%= check_box_tag('q[locations_name_cont_any][]', location.name) %>
+    <%= location.name %>
+  <% end %></li>
+  <%= f.submit "Search"%></ul>
+<% end %>
+
+</div> 
 
 
 

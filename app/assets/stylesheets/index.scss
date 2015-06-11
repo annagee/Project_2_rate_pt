@@ -10,18 +10,7 @@ body{
   width: 100%;
 }
 
-#left {
-  float: left;
-  background-color: blue;
-  width: 50%;
 
-}
-
-#right {
-  float: right;
-  background-color: red;
-  width: 50%;
-}
 
  .nav {
   background-color: white;
@@ -59,12 +48,27 @@ body{
     font-size: 25px;
     color: #e7e7e7;
   }
+  
+  .pt-index {
+    padding: 30px;
+    width: 20%;
+    height: 50%;
+    border: 5px black;
+    background-image: url("kettlebells.jpeg");
+    display: inline-block;
+    font-size: 25px;
+    text-decoration: none;
+  
+
+
+  }
 
    
 
  .review-title {
   font-style: italic;
- }
+ 
+  }
 
 .add-skills {
   display: inline-block

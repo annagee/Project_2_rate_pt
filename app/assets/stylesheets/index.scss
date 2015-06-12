@@ -58,7 +58,7 @@ body{
     display: inline-block;
     font-size: 25px;
     text-decoration: none;
-  
+
 
 
   }
@@ -73,9 +73,11 @@ body{
 .add-skills {
   display: inline-block
 }
- .adding-pt {
+ .add-pt {
   list-style: none;
-  padding: 20px 250px;
+  padding: 250px 250px;
+  float: left;
+  // position: relative;
  }
 
 .links li {

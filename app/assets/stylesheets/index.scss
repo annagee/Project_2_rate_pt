@@ -42,8 +42,6 @@ body{
 
   .nav li a{
     text-decoration: none;
-    // text-shadow: 5px  black;
-    // text-border: 5px black;
     -webkit-text-stroke: 1px black;
     font-size: 25px;
     color: #e7e7e7;
@@ -58,12 +56,8 @@ body{
     display: inline-block;
     font-size: 25px;
     text-decoration: none;
-
-
-
   }
-
-   
+  
 
  .review-title {
   font-style: italic;
@@ -77,7 +71,6 @@ body{
   list-style: none;
   padding: 250px 250px;
   float: left;
-  // position: relative;
  }
 
 .links li {

@@ -36,7 +36,10 @@ class PtsController < ApplicationController
   def delete 
 
   end  
-
+  
+  def review
+    reviews =Review.all
+  end  
 
   
   
